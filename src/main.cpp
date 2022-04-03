@@ -7,7 +7,6 @@ int main(){
     input.getUserInput();
 
     double temp = input.getClientProbability();
-
     cout << endl << "The probability is = " << temp << endl;
     return 0;
 }
