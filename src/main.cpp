@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     Solve solve;
 
-    solve.solveBaseCase();
+    solve.solve();
     
     return 0;
 }

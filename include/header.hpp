@@ -64,12 +64,17 @@ class Solve{
     public:
     //void cleanCinBuffer();
 
+    void solve();
     void solveBaseCase();
     void solve1ExtraHolder();
 
-    void replenish(int time);  // time - exact time that sandwitch has been put up
+    void replenish2(int time);  // time - exact time that sandwitch has been put up
+    void replenish3(int time);  // time - exact time that sandwitch has been put up
+    void replenish4(int time);  // time - exact time that sandwitch has been put up
+
     void refresh(vector<int> &h, int time, int n);  // refresh sandwitches, throw out old ones. time - current time. n - number of holder
     void client2();      // check if client wants a sandwitch (from 2 holders)
+    void client3();
     void printRes(string str);
 
 };
