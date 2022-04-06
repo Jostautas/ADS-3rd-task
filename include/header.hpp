@@ -16,8 +16,6 @@ class Input{
     int replFreq;    // how frequently sandwitches are being replenished (in minutes)
     int sandwLimit; // longest time a sandwitch remains in market before it gets thrown out (in minutes)
     double sandwPrice;
-    int outputType;
-
 
     public:
     void cleanCinBuffer();
@@ -30,7 +28,6 @@ class Input{
     void setReplFreq();
     void setSandwLimit();
     void setSandwPrice();
-    void setOutputType();
 
     int getWorkDayLen();
     double getClientProbability();
@@ -38,7 +35,6 @@ class Input{
     int getReplFreq();
     int getSandwLimit();
     double getSandwPrice();
-    int getOutputType();
 };
 
 class Solve{
@@ -50,6 +46,7 @@ class Solve{
     int sandwLimit;
     int outputType;
     double sandwPrice;
+    int firstSold, firstThrown, secondSold, secondThrown;
 
     vector<int> h1; // holder 1
     vector<int> h2;
@@ -78,5 +75,6 @@ class Solve{
     void client3();
     void client4();
     void printRes(string str);
+    void printSummary();
 
 };

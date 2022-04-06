@@ -11,7 +11,6 @@ void Solve::solve(){
     replFreq = input.getReplFreq();
     sandwLimit = input.getSandwLimit();
     sandwPrice = input.getSandwPrice();
-    outputType = input.getOutputType();
 
     solveBaseCase();
     solve1ExtraHolder();
@@ -38,6 +37,10 @@ void Solve::solveBaseCase(){
         
 
     }while(t < workDayLen);
+
+
+    firstSold = sold * sandwPrice;
+    firstThrown = thrown * sandwPrice;
 
     printRes("Base case (2 holders, stack format)");
 };
@@ -71,6 +74,8 @@ void Solve::solve1ExtraHolder(){
 
     }while(t < workDayLen);
 
+    secondSold = sold * sandwPrice;
+    secondThrown = thrown * sandwPrice;
     printRes("Change 1 (1 extra holder and queue format)");
 }
 
@@ -106,6 +111,8 @@ void Solve::solve2ExtraHolders(){
     }while(t < workDayLen);
 
     printRes("Change 2 (2 extra holders and queue format)");
+
+    printSummary();
 }
 
 void Solve::replenish2(int t){
@@ -342,7 +349,17 @@ void Solve::client4(){
 
 void Solve::printRes(string str){
     cout << endl << "Results of " << str << " are:" << endl;
-    cout << "   " << total * sandwPrice << " euros of sandwitches made." << endl;
-    cout << "   " << sold * sandwPrice << " euros of sanwitches sold." << endl;
-    cout << "   " << thrown * sandwPrice << " euros of sandwitches thrown away." << endl;
+    cout << setw(4) << setfill(' ') << total * sandwPrice << " euros of sandwitches made." << endl;
+    cout << setw(4) << setfill(' ') << sold * sandwPrice << " euros of sandwitches sold." << endl;
+    cout << setw(4) << setfill(' ') << thrown * sandwPrice << " euros of sandwitches thrown away." << endl;
+}
+
+void Solve::printSummary(){
+    cout << endl << "   SUMMARY:" << endl;
+    cout << "2 holders and stack format - sold sandwitches = " << setw(3) << setfill(' ') << firstSold << ", thrown sandwitches = " << setw(3) << setfill(' ') << firstThrown <<
+                                                        ". Profit = " << setw(3) << setfill(' ') << (firstSold - firstThrown) * sandwPrice << " euros" << endl;
+    cout << "3 holders and queue format - sold sandwitches = " << setw(3) << setfill(' ') << secondSold << ", thrown sandwitches = " << setw(3) << setfill(' ') << secondThrown <<
+                                                        ". Profit = " << setw(3) << setfill(' ') << (secondSold - secondThrown) * sandwPrice << " euros" << endl;
+    cout << "4 holders and queue format - sold sandwitches = " << setw(3) << setfill(' ') << sold << ", thrown sandwitches = " << setw(3) << setfill(' ') << thrown <<
+                                                        ". Profit = " << setw(3) << setfill(' ') << (sold - thrown) * sandwPrice << " euros" << endl;
 }
