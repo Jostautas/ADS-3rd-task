@@ -6,3 +6,5 @@ bet kuriuo laiko momentu ne daugiau kaip vienas klientas uzsinori sumustinio ir 
 vakare patikrinami like sumustiniai ir tie, kurie uzsigulejo per ilgai ismetami.
 Pradiniai duomenys: tikimybe, kad bet kuriuo laiko momentu klientas uzsinores sumustinio, is virtuves vienu kartu pateikiamu sumustiniu kiekis ir periodiskumas, kiek laiko isgulejes sumustini vakare ismetamas, vieno sumustinio kaina, darbo dienos ilgis.
 Ivertinti, kaip sumazetu kavines nuostoliai, jei vietoje esamu laikytuvu ji isigytu 1 arba 2 naujus laikytuvus, is kuriu klientas turi imti seniausia sumustini.
+
+Periodinis laiko kvantas tikrinimui = 1 minute.
