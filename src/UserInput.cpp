@@ -12,7 +12,7 @@ void Input::getUserInput(){
     Input::setReplFreq();
     Input::setSandwLimit();
     Input::setSandwPrice();
-    Input::setOutputType();
+    //Input::setOutputType();
     return;
 }
 
@@ -130,7 +130,7 @@ void Input::setSandwPrice(){
     }
 }
 
-void Input::setOutputType(){
+/*void Input::setOutputType(){
     cout << "What output would you like to get? Enter a corresponding digit (file would be stored in project directory)" << endl;
     cout << "   1 - console" << endl << "   2 - file" << endl << "   3 - console and file" << endl;
     int choice;
@@ -158,7 +158,7 @@ void Input::setOutputType(){
         }
     }
     
-}
+}*/
 
 int Input::getWorkDayLen(){ return workDayLen; }
 double Input::getClientProbability(){ return clientProbability; }
