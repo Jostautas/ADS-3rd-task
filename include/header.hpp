@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <stdlib.h>
 #include <time.h>
+#include <fstream>
 
 using namespace std;
 
@@ -21,6 +22,8 @@ class Input{
     void cleanCinBuffer();
 
     void getUserInput();
+
+    bool getChoice();   // 0 - user enter starting data manualy. 1 - 3 prewritten case are run automatically.
 
     void setWorkDayLen();
     void setClientProbability();
@@ -44,7 +47,6 @@ class Solve{
     int replAmount;
     int replFreq;
     int sandwLimit;
-    int outputType;
     double sandwPrice;
     int firstSold, firstThrown, secondSold, secondThrown;
 
@@ -59,12 +61,10 @@ class Solve{
     int total=0;     // total amount of sandwitches made
 
     public:
-    //void cleanCinBuffer();
-
     void solve();
-    void solveBaseCase();
-    void solve1ExtraHolder();
-    void solve2ExtraHolders();
+    void solveBaseCase(ofstream &fout);
+    void solve1ExtraHolder(ofstream &fout);
+    void solve2ExtraHolders(ofstream &fout);
 
     void replenish2(int time);  // time - exact time that sandwitch has been put up
     void replenish3(int time);  // time - exact time that sandwitch has been put up
@@ -74,7 +74,9 @@ class Solve{
     void client2();      // check if client wants a sandwitch (from 2 holders)
     void client3();
     void client4();
+    void printFirstPart(ofstream &fout);
     void printRes(string str);
     void printSummary();
 
+    ofstream fout;
 };

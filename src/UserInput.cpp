@@ -129,6 +129,25 @@ void Input::setSandwPrice(){
     }
 }
 
+bool Input::getChoice(){
+    cout << "How would you like to handle input (enter corresponding number):" << endl;
+    cout << "'0' - cutom input" << endl;
+    cout << "'1' - 3 calculations - worst, best, average case" << endl;
+
+    bool temp;
+    while(1){
+        cin >> temp;
+        if(cin && !cin.fail() && (temp == 0 || temp == 1)){
+            cleanCinBuffer();
+            return temp;
+        }
+        else{
+            cout << "ERROR - Enter 1 or 0" << endl;
+            cleanCinBuffer();
+        }
+    }
+}
+
 int Input::getWorkDayLen(){ return workDayLen; }
 double Input::getClientProbability(){ return clientProbability; }
 int Input::getReplAmount(){ return replAmount; }
